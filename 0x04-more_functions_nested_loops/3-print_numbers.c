@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 
 /**
 * print_numbers -  print the numbers
@@ -8,12 +9,11 @@
 
 void print_numbers(void)
 {
-	int y = 0;
+	char c;
 
-	while (y < 10)
+	for (c = '0'; c <= '9'; c++)
 	{
-		_putchar(y + '0');
-		y++;
+		_putchar(c);
 	}
 	_putchar('\n');
 }
