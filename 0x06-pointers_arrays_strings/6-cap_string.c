@@ -2,33 +2,34 @@
 
 /**
 * *cap_string - function that capitalizes all words of a string.
-* @str: string giving
+* @s: string giving
 * Return: the result.
 */
-char *cap_string(char *str)
+char *cap_string(char *s)
 {
-	int index = 0;
-	int test = 0;
+	int i = 0;
+	int c = 1;
 
-	while (str[index] != '\0')
+	while (s[i] != '\0')
 	{
-		if (test == 1 && str[index] >= 'a' && str[index] <= 'z')
+		if (s[i] == ' ' || s[i] == '\t' || s[i] == '\n' || s[i] == ',' ||
+				s[i] == ';' || s[i] == '.' || s[i] == '!' || s[i] == '?' ||
+				s[i] == '"' || s[i] == '(' || s[i] == ')' || s[i] == '{' || s[i] == '}')
 		{
-			str[index] = str[index] - 32;
-		}
-
-		if (str[index] == ' ' || str[index] == ',' ||
-				str[index] == ';' || str[index] == '.' ||
-				str[index] == '!' || str[index] == '?' ||
-				str[index] == '"' || str[index] == '(' ||
-				str[index] == ')' || str[index] == '{' ||
-				str[index] == '}' || str[index] == 9 || str[index] == 10)
-		{
-			test = 1;
+			c = 1;
 		}
 		else
-			test = 0;
-		index++;
+		{
+			if (c == 1)
+			{
+				if (s[i] >= 'a' && s[i] <= 'z')
+				{
+					s[i] = s[i] - 32;
+				}
+				c = 0;
+			}
+		}
+		i++;
 	}
-	return (str);
+	return (s);
 }
