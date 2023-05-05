@@ -2,12 +2,12 @@
 #define MAIN_H
 
 int _putchar(char c);
-unsigned int binary_to_uint(const char *);
-void print_binary(unsigned long int);
-int get_bit(unsigned long int, unsigned int);
-int set_bit(unsigned long int *, unsigned int);
-int clear_bit(unsigned long int *, unsigned int);
-unsigned int flip_bits(unsigned long int, unsigned long int);
+unsigned int binary_to_uint(const char *b);
+void print_binary(unsigned long intn);
+int get_bit(unsigned long int n, unsigned int index);
+int set_bit(unsigned long int *n, unsigned int index);
+int clear_bit(unsigned long int *n, unsigned int index);
+unsigned int flip_bits(unsigned long int n, unsigned long int m);
 int get_endianness(void);
 
 #endif /* MAIN_H*/
